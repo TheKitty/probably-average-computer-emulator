@@ -66,6 +66,14 @@ Theoretically any RP2350-based board with PSRAM and DVI output. Similar to the P
 
 ### Building (Stamp XL + Carrier)
 
+Install pico-sdk in your main emulator directory, subdirectory pico-sdk per [Raspberry Pi](https://github.com/raspberrypi/pico-sdk)
+cd pico-sdk
+git submodule update --init
+cmake .
+make -j (number of processors to use, this takes time, re. make -j 16 uses 16 cores, if you have them, if single core, omit the -j)
+
+
+
 ```
 cmake -B build.pico2 -DCMAKE_BUILD_TYPE=Release -DPICO_SDK_PATH=path/to/pico-sdk -DPICO_BOARD=solderparty_rp2350_stamp_xl .
 cmake --build build.pico2
